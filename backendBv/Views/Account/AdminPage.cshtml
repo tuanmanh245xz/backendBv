@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Admin Page";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Welcome, @ViewBag.User. You are logged in as Admin.</p>
+
+<a href="@Url.Action("Logout", "Account")">Logout</a>

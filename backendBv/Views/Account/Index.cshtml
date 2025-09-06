@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Account Page";
+}
+
+@if (ViewBag.User != null)
+{
+    <h2>Welcome @ViewBag.User</h2>
+    <h4>Your role is: @ViewBag.Role</h4>
+
+    @if (ViewBag.Role == "Admin")
+    {
+        <a href="@Url.Action("AdminPage", "Account")">Go to Admin Page</a>
+    }
+    else if (ViewBag.Role == "User")
+    {
+        <a href="@Url.Action("UserPage", "Account")">Go to User Page</a>
+    }
+
+    <a href="@Url.Action("Logout", "Account")">Logout</a>
+}
+else
+{
+<h2>Welcome to the site</h2>
+<a href="@Url.Action("Login", "Account")">Login</a>
+< a href = "@Url.Action("Register", "Account")" > Register </ a >
+}
