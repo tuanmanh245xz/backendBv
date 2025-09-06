@@ -1,6 +1,8 @@
-﻿var builder = WebApplication.CreateBuilder(args);
-//cau hinh ket noi csdl
+﻿using backendBv.Models;
 
+var builder = WebApplication.CreateBuilder(args);
+//cau hinh ket noi csdl
+builder.Services.AddSingleton<DatabaseHelper>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
